@@ -92,8 +92,8 @@ UA = [
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-
-    'stackoverflow.middlewares.ProxyMiddleware' : 544,
+    'stackoverflow.middlewares.ProxyMiddleware' : 100,
+    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110
 }
 
 # Enable or disable extensions
@@ -128,7 +128,7 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-DOWNLOAD_DELAY = 3
+#DOWNLOAD_DELAY = 0.25
 
 PROXY_POOL_URL = 'http://45.77.189.217:5555/random'
 DOWNLOAD_TIMEOUT = 60
